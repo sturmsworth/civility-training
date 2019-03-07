@@ -92,7 +92,7 @@ class App extends Component {
               userToken: this.state.userToken,
               completedMovies: [],
               courseCompleted: false,
-              currentMovie: '7maJOI3QMu0',
+              currentMovie: '8FmuKZHgxQI',
               validCert: false,
             })
             .then(() => {
