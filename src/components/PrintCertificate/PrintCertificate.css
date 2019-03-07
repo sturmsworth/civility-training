@@ -1,0 +1,48 @@
+#print-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#box {
+    background-color: white;
+    border-radius: 10;
+    box-shadow: 0 0 50px #00000088;
+    width: 100%;
+    height: 100%;
+    padding: 150px;
+}
+
+#sov-logo {
+    padding-bottom: 20px;
+}
+
+#sov-logo img {
+    width: 60%;
+}
+
+#cert-title h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4em;
+}
+
+.cert-description {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.cert-bold {
+    font-family: 'Parisienne', cursive;
+}
+
+#line hr {
+    border: 0 none;
+    height: 5px;
+    color: red;
+    background-color: red;
+}
