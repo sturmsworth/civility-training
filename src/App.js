@@ -18,6 +18,8 @@ import './App.css'
 // packages
 import Moment from 'moment'
 
+// here are some new comments about things that i didnt have before
+
 const db = firebase.firestore()
 
 class App extends Component {
