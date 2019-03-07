@@ -6,7 +6,7 @@ const opts = {
     width: '100%',
     playerVars: {
         autoplay: 0,
-        controls: 1
+        controls: 0
     }
 }
 

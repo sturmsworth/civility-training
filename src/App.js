@@ -241,7 +241,6 @@ class App extends Component {
   }
 
   setCertificate() {
-    console.log(`this is setCertificate running: `, this.state.completedMovies.length)
     if (this.state.completedMovies.length === 35) {
       this.setState({
         validCert: true,
