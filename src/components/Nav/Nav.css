@@ -1,0 +1,20 @@
+#nav-target {
+    background-color: #f6e9cf;
+    padding: 50px 0px;
+}
+
+#nav-target h1 {
+    font-family: "Cinzel";
+    font-size: 36px;
+    word-spacing: 10px;
+    color: #9f2d21;
+    letter-spacing: 2px;
+    font-weight: 300;
+    line-height: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#sign-out {
+    margin: 10px;
+}

@@ -1,0 +1,27 @@
+#player-section .btn {
+    background-color: #601806;
+    border-color: #360f05;
+    width: 100%;
+    text-align: left;
+}
+
+#player-section .btn:hover {
+    color: #b4aa97
+}
+
+#title {
+    padding-right: 5px;
+}
+
+#duration {
+    padding-left: 5px;
+}
+
+#checked {
+    padding-left: 5px;
+    color: #3dc000;
+}
+
+#not-checked {
+    padding-left: 5px;
+}

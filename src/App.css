@@ -1,0 +1,25 @@
+#signin-section {
+    height: 69.5vh;
+}
+
+#player-section {
+    background-color: #301503;
+    padding: 20px 0px 0px 0px;
+}
+
+#player-section .col-4 {
+    padding-right: 0;
+}
+
+#player-section .col-8 {
+    padding-left: 0;
+}
+
+#cert-section {
+    background-color: #301503;
+    padding: 20px 0px;
+}
+
+#footer-section {
+    background-color: #f6e9cf;
+}
