@@ -306,11 +306,10 @@ class App extends Component {
   }
 
   render() {
-    const { signedIn, movies, currentMovie, completedMovies, validCert, userName, completionDate } = this.state
+    const { signedIn, movies, currentMovie, completedMovies, validCert, userName, completionDate, userToken } = this.state
     return (
       <div className="App container-fluid">
-        <div className="container">
-
+        
         <section>
           <div className="row">
             <div className="col-12">
@@ -331,7 +330,7 @@ class App extends Component {
             <div>
               <section id="player-section">
                 <div className="row">
-                  <div className="col-4">
+                  <div className="col-3">
                     <VideoList 
                       movies={movies} 
                       completedMovies={completedMovies} 
@@ -340,7 +339,7 @@ class App extends Component {
                       completedCheckmark={this.setCompletedCheckmark}
                     />
                   </div>
-                  <div className="col-8">
+                  <div className="col-9">
                     <Player 
                       currentMovie={currentMovie}
                       stopInterval={this.stopInterval}
@@ -375,14 +374,13 @@ class App extends Component {
             <section id="print-section" onClick={() => {this.setModalState()}}>
               <div className="row">
                 <div className="col-12">
-                  <PrintCertificate userName={userName} completionDate={completionDate} />
+                  <PrintCertificate userName={userName} completionDate={completionDate} certID={userToken} />
                 </div>
               </div>
             </section> : 
             <div></div>
           }
-          
-        </div>
+         
       </div>
     );
   }

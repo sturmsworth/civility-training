@@ -10,7 +10,7 @@ const sortMovies = (movies) => {
 }
 
 const videoListStyles = {
-    height: '515px',
+    height: '800px',
     overflowY: 'scroll'
 }
 

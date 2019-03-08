@@ -23,3 +23,22 @@
 #footer-section {
     background-color: #f6e9cf;
 }
+
+@media print {
+    @page {
+        size: A4 landscape;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+    #print-section, #print-section * {
+        visibility: visible;
+    }
+    
+    #print-section {
+        position: absolute;
+    }
+}

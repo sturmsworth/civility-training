@@ -2,12 +2,13 @@ import React from 'react'
 import YouTube from 'react-youtube'
 
 const opts = {
-    height: '515px',
+    height: '800px',
     width: '100%',
+    fs: 1,
     playerVars: {
         autoplay: 0,
         controls: 0,
-        rel: 0
+        rel: 0,
     }
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from './gmail-capitolREDback.jpg'
 import './PrintCertificate.css'
 
-const PrintCertificate = ({ userName, completionDate }) => (
+const PrintCertificate = ({ userName, completionDate, certID }) => (
     <div id="box" className="container-fluid">
         <div id="nice-border">
             <div className="row">
@@ -65,6 +65,19 @@ const PrintCertificate = ({ userName, completionDate }) => (
                 <div className="col-12">
                     <div id="line">
                         <hr></hr>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-12">
+                    <div id="serial">
+                        <p>Certificate # <b>
+                            {
+                                certID.slice(117, 129)
+                            }
+                            </b> 
+                        </p>
                     </div>
                 </div>
             </div>
