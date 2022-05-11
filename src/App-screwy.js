@@ -48,7 +48,9 @@ class App extends Component {
       division: null,
       playerState: null,
       signOutMessage: null,
-      timeOut: null
+      timeOut: false,
+      timeToLogout: 10,
+      timeToLogoutID: ""
     };
     this.getPercentage = this.getPercentage.bind(this);
     this.startInterval = this.startInterval.bind(this);
@@ -74,17 +76,8 @@ class App extends Component {
         if (user && token) {
           this.setState({
             signedIn: true,
-            firstName:
-              user.Rb.displayName.split(" ")[0] === "Sen."
-                ? `${user.Rb.displayName.split(" ")[0]} ${
-                    user.Rb.displayName.split(" ")[1]
-                  }`
-                : `${user.Rb.displayName.split(" ")[0]}`,
-            lastName:
-              user.Rb.displayName.split(" ")[0] === "Sen."
-                ? `${user.Rb.displayName.split(" ")[2]}`
-                : `${user.Rb.displayName.split(" ")[1]}`,
-
+            firstName: user.Rb.displayName.split(" ")[0],
+            lastName: user.Rb.displayName.split(" ")[1],
             userEmail: user.Rb.email,
             hd: user.Rb.email.split("@")[1],
             userAccessDate: Moment(new Date()).format("LLL"),
@@ -502,47 +495,45 @@ class App extends Component {
       })
       .catch(err => console.log(err));
 
-    const logoutOnInactive = () => {
-      let time;
+    const resetTimer = () => {
+      this.setState({
+        timeToLogout: 10
+      });
+    };
 
-      const resetTimer = () => {
-        clearTimeout(time);
-        time = setTimeout(() => {
-          firebase
-            .auth()
-            .signOut()
-            .then(() => {
-              this.stopInterval();
-              this.setState({
-                signedIn: false,
-                currentMovie: null,
-                firstName: null,
-                lastName: null,
-                userEmail: null,
-                userAccessDate: null,
-                userToken: null,
-                completedMovies: [],
-                courseCompleted: false,
-                validCert: false,
-                trackedPercentage: null,
-                intervalID: null,
-                nextRequirement: null,
-                completionDate: null,
-                hd: null,
-                signOutMessage:
-                  "For your protection you have been signed out due to inactivity. Please sign in again to resume."
-              });
-            })
-            .catch(err => {
-              console.log(err);
-            });
-        }, 300000);
+    window.onload = () => resetTimer();
+    document.onmousemove = () => resetTimer();
+    document.onkeypress = () => resetTimer();
+    document.onclick = () => resetTimer();
+  }
+
+  componentWillUpdate() {
+    const logoutOnInactive = () => {
+      const timeTracker = () => {
+        this.setState(prevState => ({
+          timeToLogout: prevState.timeToLogout - 1
+        }));
       };
 
-      window.onload = resetTimer;
-      document.onmousemove = resetTimer;
-      document.onkeypress = resetTimer;
-      document.onclick = resetTimer;
+      const setTimerInterval = () => {
+        this.setState({
+          timeToLogoutID: setInterval(() => timeTracker(), 1000)
+        });
+      };
+
+      const clearTimerInterval = () => {
+        this.setState({
+          timeToLogoutID: clearInterval(this.state.timeToLogoutID)
+        });
+      };
+
+      if (this.state.signedIn === true) {
+        setTimerInterval();
+      }
+
+      if (this.state.timeToLogout === 0) {
+        clearTimerInterval();
+      }
     };
 
     logoutOnInactive();

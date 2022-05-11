@@ -4,14 +4,14 @@
 
 #player-section {
     background-color: #301503;
-    padding: 20px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
-#player-section .col-4 {
+#player-section .col-3 {
     padding-right: 0;
 }
 
-#player-section .col-8 {
+#player-section .col-9 {
     padding-left: 0;
 }
 
@@ -34,11 +34,25 @@
     body * {
         visibility: hidden;
     }
-    #print-section, #print-section * {
+
+    #print-section, 
+    #print-section #box, 
+    #print-section #box #nice-border, 
+    #print-section #box .row .col-12 #sov-logo img, 
+    #print-section #box #nice-border .row .col-12 #cert-title h1,
+    #print-section #box #nice-border .row .col-12 .cert-description h3,
+    #print-section #box #nice-border .row .col-12 .cert-bold h1,
+    #print-section #box #nice-border .row .col-12 #line hr,
+    #print-section #box #nice-border .row .col-12 #serial p,
+    #print-section #box #nice-border .row .col-12 #serial p b {
         visibility: visible;
     }
-    
+
     #print-section {
         position: absolute;
+    }
+
+    #print-me {
+        visibility: hidden !important;
     }
 }

@@ -4,7 +4,7 @@ import './Movie.css'
 const Movie = ({ title, durationYT, movieId, setCurrentMovie, completedMovies, timeConverter, completedCheckmark }) => {
     return (
         <div id={movieId}>
-            <button className="btn btn-outline-light" onClick={() => setCurrentMovie(movieId)}>
+            <button className="btn btn-outline-light list-btn" onClick={() => setCurrentMovie(movieId)}>
                 <span id="title">{title}</span>
                 <span id="duration">
                     {timeConverter(durationYT)}

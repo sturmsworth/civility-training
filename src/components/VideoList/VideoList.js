@@ -1,20 +1,19 @@
 import React from 'react';
 import Movie from '../Movies/Movie'
-import { orderBy } from 'natural-orderby'
-import './VideoList.css'
 
-const sortMovies = (movies) => {
-    const concatMovies = [].concat(movies)
-    const sortedMovies = orderBy(concatMovies, [ movie => movie.title ], [ 'asc' ])
-    return sortedMovies
-}
+
+// const sortMovies = (movies) => {
+//     const concatMovies = [].concat(movies)
+//     const sortedMovies = orderBy(concatMovies, [ movie => movie.title ], [ 'asc' ])
+//     return sortedMovies
+// }
 
 const videoListStyles = {
     height: '800px',
     overflowY: 'scroll'
 }
 
-const VideoList = ({ movies, setCurrentMovie, completedMovies, timeConverter, completedCheckmark  }) => (
+const VideoList = ({ movies, setCurrentMovie, completedMovies, timeConverter, completedCheckmark, sortMovies }) => (
     <div style={videoListStyles}>
         { 
             sortMovies(movies).map((movie, index) => {

@@ -1,12 +1,14 @@
-#player-section .btn {
+#player-section .list-btn {
     background-color: #601806;
     border-color: #360f05;
     width: 100%;
     text-align: left;
 }
 
-#player-section .btn:hover {
-    color: #b4aa97
+#player-section .list-btn:hover {
+    color: #b4aa97;
+    font-weight: bold;
+    background-color: #380e03;
 }
 
 #title {
